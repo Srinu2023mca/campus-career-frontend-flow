@@ -1,73 +1,91 @@
-# Welcome to your Lovable project
 
-## Project info
+# E-Commerce Product Catalog
 
-**URL**: https://lovable.dev/projects/337b56e1-61f2-4086-9188-032915194464
+A modern, responsive e-commerce application built with React, TypeScript, and Tailwind CSS, showcasing products from the FakeStore API.
 
-## How can I edit this code?
+## Getting Started
 
-There are several ways of editing your application.
+### Prerequisites
 
-**Use Lovable**
+- Node.js (v16 or later)
+- npm or yarn
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/337b56e1-61f2-4086-9188-032915194464) and start prompting.
+### Installation
 
-Changes made via Lovable will be committed automatically to this repo.
+1. Clone the repository
+   ```bash
+   git clone https://github.com/yourusername/e-commerce-catalog.git
+   cd e-commerce-catalog
+   ```
 
-**Use your preferred IDE**
+2. Install dependencies
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+3. Start the development server
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+4. Open your browser and navigate to `http://localhost:8080`
 
-Follow these steps:
+## Project Structure
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/         # Reusable UI components
+│   ├── CategoryFilter.tsx
+│   ├── ErrorDisplay.tsx
+│   ├── LoadingSpinner.tsx
+│   ├── ProductCard.tsx
+│   ├── ProductSkeleton.tsx
+│   └── SearchBar.tsx
+├── pages/              # Page components
+│   ├── Products.tsx    # Main product listing page
+│   ├── ProductDetail.tsx # Product detail page
+│   └── NotFound.tsx    # 404 page
+├── services/           # API services
+│   └── api.ts          # FakeStore API service
+└── App.tsx             # Application routes
 ```
 
-**Edit a file directly in GitHub**
+## Data Fetching Strategy
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+This project uses React Query for data fetching, which provides:
 
-**Use GitHub Codespaces**
+1. **Automatic caching**: Products are cached to minimize API calls
+2. **Loading and error states**: Simplified handling of loading and error states
+3. **Refetch capabilities**: Easy refetching of data when needed
+4. **TypeScript integration**: Type-safe data fetching
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Products data is fetched client-side using React Query's hooks, allowing for a smooth user experience with automatic loading states and error handling.
 
-## What technologies are used for this project?
+## Styling
 
-This project is built with:
+The project uses Tailwind CSS for styling, providing:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. Utility-first approach for rapid UI development
+2. Responsive design out of the box
+3. Consistency in design
+4. Easy customization
 
-## How can I deploy this project?
+## Features
 
-Simply open [Lovable](https://lovable.dev/projects/337b56e1-61f2-4086-9188-032915194464) and click on Share -> Publish.
+- **Product Listing**: Grid layout showcasing all products with image, title, price, and category
+- **Product Details**: Detailed view of each product with full description
+- **Category Filtering**: Filter products by category
+- **Search Functionality**: Search products by title or description
+- **Loading States**: Skeleton loaders for better user experience
+- **Error Handling**: User-friendly error messages
+- **Responsive Design**: Works on mobile, tablet, and desktop
+- **Navigation**: Easy navigation between product listing and details pages
 
-## Can I connect a custom domain to my Lovable project?
+## License
 
-Yes, you can!
+MIT
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
